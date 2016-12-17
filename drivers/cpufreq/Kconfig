@@ -253,6 +253,11 @@ config CPU_FREQ_DEFAULT_GOV_ELECTRON
 	  'electron' governor for latency-sensitive workloads.
 
 
+config CPU_FREQ_DEFAULT_GOV_DESPAIR
+	bool "despair"
+	select CPU_FREQ_GOV_DESPAIR
+	help
+
 config CPU_FREQ_DEFAULT_GOV_BIOSHOCK
 	bool "BioShock"
 	select CPU_FREQ_GOV_BIOSHOCK
