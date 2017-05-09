@@ -3562,7 +3562,6 @@ CONFIG_STAGING=y
 # CONFIG_RTS5208 is not set
 # CONFIG_LINE6_USB is not set
 # CONFIG_FB_XGI is not set
-# CONFIG_BCM_WIMAX is not set
 # CONFIG_FT1000 is not set
 
 #
