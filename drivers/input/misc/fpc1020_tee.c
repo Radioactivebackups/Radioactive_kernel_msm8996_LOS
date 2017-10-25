@@ -331,6 +331,7 @@ static ssize_t report_home_set(struct device *dev,
 		return -EINVAL;
 	if (!strncmp(buf, "down", strlen("down")))
 	{
+
         if(!ignore_keypad){
         input_report_key(fpc1020->input_dev,
                             KEY_HOME, 1);
@@ -354,16 +355,7 @@ static ssize_t report_home_set(struct device *dev,
 	}
 	else
 		return -EINVAL;
-    if(ignore_keypad){
-        if(!key_home_pressed){
-            reinit_completion(&key_cm);
-            time = wait_for_completion_timeout(&key_cm,msecs_to_jiffies(60));
-            if (!time)
-                int_touch();
-        }else{
-            int_touch();
-        }
-    }
+
 	return count;
 }
 static DEVICE_ATTR(report_home, S_IWUSR, NULL, report_home_set);
